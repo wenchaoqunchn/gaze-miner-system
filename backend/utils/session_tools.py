@@ -81,16 +81,16 @@ class Helper:
             # 移动切片节点指针
             split_index += 1
 
-        if raw_index < len(raw_df):
-            slice_data = raw_df.iloc[raw_index:]
-            if not slice_data.empty:
-                output_file = save_dir / f"split_data_{slice_number:02}.csv"
-                slice_df = pd.DataFrame(slice_data)
-                print(
-                    f"Columns in remaining data: {slice_df.columns.tolist()}"
-                )  # 打印列名
-                slice_df.to_csv(output_file, index=False)
-                print(f"Saved remaining data to {output_file}")
+        # if raw_index < len(raw_df):
+        #     slice_data = raw_df.iloc[raw_index:]
+        #     if not slice_data.empty:
+        #         output_file = save_dir / f"split_data_{slice_number:02}.csv"
+        #         slice_df = pd.DataFrame(slice_data)
+        #         print(
+        #             f"Columns in remaining data: {slice_df.columns.tolist()}"
+        #         )  # 打印列名
+        #         slice_df.to_csv(output_file, index=False)
+        #         print(f"Saved remaining data to {output_file}")
 
         print("Splitting complete.")
 
