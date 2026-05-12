@@ -1,0 +1,43 @@
+# ==========================
+# 1. 操作系统与 IDE 缓存
+# ==========================
+.idea/
+.vscode/
+.DS_Store
+*.log
+
+# ==========================
+# 2. 前端依赖与构建产物 (Frontend)
+# ==========================
+frontend/node_modules/
+frontend/dist/
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# ==========================
+# 3. 后端环境与编译文件 (Backend)
+# ==========================
+backend/venv/
+backend/.venv/
+backend/env/
+backend/__pycache__/
+*/__pycache__/
+*.py[cod]
+*$py.class
+
+# ==========================
+# 4. 环境变量与敏感配置
+# ==========================
+.env
+.env.local
+.env.production
+
+# ==========================
+# 5. 实验数据与日志 (Data) - 极其重要
+# ==========================
+# 忽略 data 目录下的所有真实 session 数据，防止仓库被原始视频/图片撑爆
+data/session_*/
+# 但保留 data 目录的空壳，方便别人 clone 下来直接能跑
+!data/.gitkeep 
+ 
