@@ -65,3 +65,18 @@ npm run dev
 ## 🔮 未来规划 (Gaze-Reasoner)
 
 我们正致力于将本系统与 **多模态大模型 (VLM)** 结合，通过 **GazeReasoner** 算法实现从“发现缺陷”到“自动生成诊断报告”的跨越。相关模块即将更新。
+
+## 🧾 本次更新摘要（commit: 20f9a83 | 2026-05-14）
+
+本次提交主要围绕 **AOI 语义增强、数据采集链路稳定化、页面标注规范化** 做了升级与清理：
+
+* **AOI 语义标注体系完善**：多个核心组件/页面（如 `MainHeader`、`SearchBox`、`NewsList`、`PosterPlayer`、`StepBar`、`HomePage`、`ContactUs` 等）新增 `data-aoi-type / data-aoi-desc / data-aoi-group` 属性，用于将“屏幕空间坐标”与“业务语义”绑定，便于后续多模态分析与自动诊断。
+* **AOI 导出逻辑重构**：`frontend/src/getAOIInfo.js` 从“直接下载 JSON”的单点脚本演进为可复用的采集模块：
+  * 新增 `getAOIInfo(viewName)`，在保留旧版坐标缩放/偏移逻辑的同时，补全 `id / mark_number / width / height / semantics / state / html_snippet` 等字段。
+  * 路由层改为在切页时将 AOI 数据写入 Vuex（全局 AOI Map），而不是每次都强制下载文件。
+* **路由采集链路增强**：路由守卫中 AOI 采集以“离开页面（from.name）”为时间点进行统一暂存，降低页面跳转过程中重复 IO。
+* **实验完成页能力增强**：`SessionDone.vue` UI 做了卡片化与响应式按钮布局，并新增（在 Master/AOI 模式下）一键导出“全局 AOI 信息”的入口。
+* **冗余模块清理**：移除校准相关页面与旧的 AOISelector 组件，减少未使用代码与维护负担。
+
+> 备注：该提交为后续把 AOI 数据与截图/眼动切片进行更稳定对齐、并接入 VLM/LLM 分析打下了结构化基础。
+
