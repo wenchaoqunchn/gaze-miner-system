@@ -2,19 +2,29 @@
     <div class="main-box">
         <div class="sidebar">
             <div class="bar-title">
-                <h2 class="aoi">服务</h2>
+                <h2 class="aoi" data-aoi-type="info" data-aoi-desc="侧边栏主标题-服务导航" data-aoi-group="service-sidebar">服务
+                </h2>
             </div>
             <el-menu :default-active="activeMenu" class="el-menu-vertical" @select="handleSelect"
                 background-color="#f7f7f7" text-color="#333" active-text-color="#20a0ff" mode="vertical">
-                <el-menu-item class="aoip" index="BookBorrow">书刊借阅</el-menu-item>
-                <el-menu-item class="aoip" index="CardProcess">证件办理</el-menu-item>
-                <el-menu-item class="aoip" index="AncientRead">古籍阅览</el-menu-item>
-                <el-menu-item class="aoip" index="DiscRequest">随书光盘</el-menu-item>
-                <el-menu-item class="aoip" index="DocumentTransfer">文献传递</el-menu-item>
-                <el-menu-item class="aoip" index="TechSearch">科技查新</el-menu-item>
-                <el-menu-item class="aoip" index="InfoTeaching">文献检索教学</el-menu-item>
-                <el-menu-item class="aoip key-aoi" index="SeatReserve">空间与设施</el-menu-item>
-                <el-menu-item class="aoip" index="VolunteerTeam">志愿服务团</el-menu-item>
+                <el-menu-item class="aoip" index="BookBorrow" data-aoi-type="nav" data-aoi-desc="导航至书刊借阅页"
+                    data-aoi-group="service-menu">书刊借阅</el-menu-item>
+                <el-menu-item class="aoip" index="CardProcess" data-aoi-type="nav" data-aoi-desc="导航至证件办理页"
+                    data-aoi-group="service-menu">证件办理</el-menu-item>
+                <el-menu-item class="aoip" index="AncientRead" data-aoi-type="nav" data-aoi-desc="导航至古籍阅览页"
+                    data-aoi-group="service-menu">古籍阅览</el-menu-item>
+                <el-menu-item class="aoip" index="DiscRequest" data-aoi-type="nav" data-aoi-desc="导航至随书光盘页"
+                    data-aoi-group="service-menu">随书光盘</el-menu-item>
+                <el-menu-item class="aoip" index="DocumentTransfer" data-aoi-type="nav" data-aoi-desc="导航至文献传递页"
+                    data-aoi-group="service-menu">文献传递</el-menu-item>
+                <el-menu-item class="aoip" index="TechSearch" data-aoi-type="nav" data-aoi-desc="导航至科技查新页"
+                    data-aoi-group="service-menu">科技查新</el-menu-item>
+                <el-menu-item class="aoip" index="InfoTeaching" data-aoi-type="nav" data-aoi-desc="导航至文献检索教学页"
+                    data-aoi-group="service-menu">文献检索教学</el-menu-item>
+                <el-menu-item class="aoip key-aoi" index="SeatReserve" data-aoi-type="nav"
+                    data-aoi-desc="导航至空间与设施(座位预约)页" data-aoi-group="service-menu">空间与设施</el-menu-item>
+                <el-menu-item class="aoip" index="VolunteerTeam" data-aoi-type="nav" data-aoi-desc="导航至志愿服务团招募页"
+                    data-aoi-group="service-menu">志愿服务团</el-menu-item>
             </el-menu>
         </div>
         <div class="main-content">

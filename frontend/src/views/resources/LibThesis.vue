@@ -1,15 +1,15 @@
 <template>
     <div class="main-content">
-        <div class="aoi breadcrumb">
+        <div class="aoi breadcrumb" data-aoi-type="info" data-aoi-desc="面包屑位置提示" data-aoi-group="lib-thesis">
             您当前所在位置 ： 首页 > 资源 > 学位论文
         </div>
-        <div class="aoi title">
+        <div class="aoi title" data-aoi-type="info" data-aoi-desc="页面主标题-北工大学位论文" data-aoi-group="lib-thesis">
             <h2>北工大学位论文</h2>
         </div>
-        <div class="aoi content">
+        <div class="aoi content" data-aoi-type="info" data-aoi-desc="学位论文检索系统介绍与入口链接展示" data-aoi-group="lib-thesis">
             <p>北京工业大学学位论文库收录本校1997年以来公开的博士论文、1996年以来公开的硕士论文和2008年以来公开的部分优秀本科学位论文，校内用户可查阅下载全文。</p>
-
-            <p>论文查询网址：<a href="https://libthesis.bjut.edu.cn" target="_blank">https://libthesis.bjut.edu.cn</a></p>
+            <p>论文查询网址：<a href="https://libthesis.bjut.edu.cn" target="_blank" data-aoi-type="nav"
+                    data-aoi-desc="跳转至独立论文查询系统">https://libthesis.bjut.edu.cn</a></p>
             <img src="../../assets/thesis.jpg" alt="北工大学位论文" class="thesis-image" />
         </div>
     </div>

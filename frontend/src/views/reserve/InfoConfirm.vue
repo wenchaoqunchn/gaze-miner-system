@@ -1,16 +1,20 @@
 <template>
-    <!-- 提示信息 -->
-    <div class="aoip key-aoi alert-message">
-        <span class="alert-icon">⚠️</span> <!-- 使用 emoji 作为图标 -->
-        请认真确认预约信息
+    <div class="aoip key-aoi alert-message" data-aoi-type="info" data-aoi-desc="警告提示：要求用户认真核对预约信息"
+        data-aoi-group="info-confirm">
+        <span class="alert-icon">⚠️</span> 请认真确认预约信息
     </div>
     <div class="info-box">
         <div class="info-container">
-            <h2 class="aoim key-aoi">预约信息</h2>
-            <p class="aoim key-aoi"><strong>层数：</strong> {{ selectedFloor }}</p>
-            <p class="aoim key-aoi"><strong>日期：</strong> {{ formattedDate }}</p>
-            <p class="aoim key-aoi"><strong>时间：</strong> {{ startTime }} - {{ endTime }}</p>
-            <p class="aoim key-aoi"><strong>座位号：</strong> {{ selectedSeat }}</p>
+            <h2 class="aoim key-aoi" data-aoi-type="info" data-aoi-desc="最终预约信息确认面板标题" data-aoi-group="info-confirm">
+                预约信息</h2>
+            <p class="aoim key-aoi" data-aoi-type="info" data-aoi-desc="已选择的楼层展示" data-aoi-group="info-confirm">
+                <strong>层数：</strong> {{ selectedFloor }}</p>
+            <p class="aoim key-aoi" data-aoi-type="info" data-aoi-desc="已选择的日期展示" data-aoi-group="info-confirm">
+                <strong>日期：</strong> {{ formattedDate }}</p>
+            <p class="aoim key-aoi" data-aoi-type="info" data-aoi-desc="已选择的时间段展示" data-aoi-group="info-confirm">
+                <strong>时间：</strong> {{ startTime }} - {{ endTime }}</p>
+            <p class="aoim key-aoi" data-aoi-type="info" data-aoi-desc="已选择的座位号展示" data-aoi-group="info-confirm">
+                <strong>座位号：</strong> {{ selectedSeat }}</p>
         </div>
     </div>
 </template>

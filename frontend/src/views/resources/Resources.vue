@@ -2,15 +2,22 @@
     <div class="main-box">
         <div class="sidebar">
             <div class="bar-title">
-                <h2 class="aoi">资源</h2>
+                <h2 class="aoi" data-aoi-type="info" data-aoi-desc="侧边栏主标题-资源导航" data-aoi-group="resources-sidebar">
+                    资源
+                </h2>
             </div>
             <el-menu :default-active="activeMenu" class="el-menu-vertical" @select="handleSelect"
                 background-color="#f7f7f7" text-color="#333" active-text-color="#20a0ff" mode="vertical">
-                <el-menu-item class="aoip" index="CoreJournal">核心期刊导航</el-menu-item>
-                <el-menu-item class="aoip" index="EBook">电子图书</el-menu-item>
-                <el-menu-item class="aoip" index="LibThesis">学位论文</el-menu-item>
-                <el-menu-item class="aoip" index="CommonApp">常用工具软件</el-menu-item>
-                <el-menu-item class="aoip" index="Copyright">版权公告</el-menu-item>
+                <el-menu-item class="aoip" index="CoreJournal" data-aoi-type="nav" data-aoi-desc="导航至核心期刊导航页"
+                    data-aoi-group="resources-menu">核心期刊导航</el-menu-item>
+                <el-menu-item class="aoip" index="EBook" data-aoi-type="nav" data-aoi-desc="导航至电子图书页"
+                    data-aoi-group="resources-menu">电子图书</el-menu-item>
+                <el-menu-item class="aoip" index="LibThesis" data-aoi-type="nav" data-aoi-desc="导航至学位论文页"
+                    data-aoi-group="resources-menu">学位论文</el-menu-item>
+                <el-menu-item class="aoip" index="CommonApp" data-aoi-type="nav" data-aoi-desc="导航至常用工具软件页"
+                    data-aoi-group="resources-menu">常用工具软件</el-menu-item>
+                <el-menu-item class="aoip" index="Copyright" data-aoi-type="nav" data-aoi-desc="导航至版权公告页"
+                    data-aoi-group="resources-menu">版权公告</el-menu-item>
             </el-menu>
         </div>
         <div class="main-content">

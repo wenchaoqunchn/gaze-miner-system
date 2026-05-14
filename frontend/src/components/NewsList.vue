@@ -1,7 +1,9 @@
 <template>
     <div class="news-container">
-        <h1 class="aoi header">最新资讯</h1>
-        <el-table class="aoi tab" :data="newsList">
+        <h1 class="aoi header" data-aoi-type="info" data-aoi-desc="最新资讯模块主标题" data-aoi-group="news-list">最新资讯</h1>
+
+        <el-table class="aoi tab" :data="newsList" data-aoi-type="info" data-aoi-desc="最新资讯动态列表(含讲座通知、资源推荐等详细条目)"
+            data-aoi-group="news-list">
             <el-table-column prop="date" label="发布日期" width="80">
                 <template #default="{ row }">
                     <span class="date">{{ row.date }}</span>

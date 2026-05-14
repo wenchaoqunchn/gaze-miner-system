@@ -1,43 +1,30 @@
 <template>
     <div class="main-content">
-        <div class="aoi breadcrumb">
+        <div class="aoi breadcrumb" data-aoi-type="info" data-aoi-desc="面包屑位置提示" data-aoi-group="seat-reserve-info">
             您当前所在位置 ： 首页 > 服务 > 空间与设施
         </div>
-        <div class="aoi key-aoi title">
+        <div class="aoi key-aoi title" data-aoi-type="info" data-aoi-desc="页面主标题-座位预约"
+            data-aoi-group="seat-reserve-info">
             <h2>座位预约</h2>
         </div>
-        <div class="aoi key-aoi content">
+        <div class="aoi key-aoi content" data-aoi-type="info" data-aoi-desc="座位预约系统使用流程与注意事项说明"
+            data-aoi-group="seat-reserve-info">
             <p>欢迎使用座位预约系统，以下是座位预约的流程和使用方法：</p>
-            <p>
-                1. 本系统仅供本校学生使用，图书馆需通过刷卡或人脸识别进入。
-            </p>
-            <p>
-                2. 点击“开始预约”按钮进入预约系统，选择您希望预约的图书馆分区。
-            </p>
-            <p>
-                3. 选择您希望预约的日期和时间段，系统会显示可用的座位。
-            </p>
-            <p>
-                4. 选择合适的座位并确认预约信息，点击“提交”按钮。
-            </p>
-            <p>
-                5. 您的预约信息将通过邮件发送至您的邮箱，请及时查收。
-            </p>
-            <p>
-                <strong>注意事项：</strong>
-            </p>
-            <p>
-                - 请提前预约，避免高峰期座位紧张。
-            </p>
-            <p>
-                - 如需取消预约，请在预约时间前24小时内进行操作。
-            </p>
-            <p>
-                - 座位预约系统仅在工作日7:00-22:00开放，周末及节假日请提前安排。
-            </p>
+            <p>1. 本系统仅供本校学生使用，图书馆需通过刷卡或人脸识别进入。</p>
+            <p>2. 点击“开始预约”按钮进入预约系统，选择您希望预约的图书馆分区。</p>
+            <p>3. 选择您希望预约的日期和时间段，系统会显示可用的座位。</p>
+            <p>4. 选择合适的座位并确认预约信息，点击“提交”按钮。</p>
+            <p>5. 您的预约信息将通过邮件发送至您的邮箱，请及时查收。</p>
+            <p><strong>注意事项：</strong></p>
+            <p>- 请提前预约，避免高峰期座位紧张。</p>
+            <p>- 如需取消预约，请在预约时间前24小时内进行操作。</p>
+            <p>- 座位预约系统仅在工作日7:00-22:00开放，周末及节假日请提前安排。</p>
         </div>
         <div class="button-container">
-            <button class="aoi key-aoi start-button" @click="navigateToReserve">开始预约</button>
+            <button class="aoi key-aoi start-button" @click="navigateToReserve" data-aoi-type="action"
+                data-aoi-desc="跳转进入真实的座位预约交互系统" data-aoi-group="seat-reserve-action">
+                开始预约
+            </button>
         </div>
     </div>
 </template>

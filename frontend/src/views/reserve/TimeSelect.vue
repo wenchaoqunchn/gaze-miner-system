@@ -1,8 +1,9 @@
 <template>
     <div class="time-page">
         <div class="notice">
-            <h3 class="aoi key-aoi">温馨提示：</h3>
-            <ul class="aoi key-aoi">
+            <h3 class="aoi key-aoi" data-aoi-type="info" data-aoi-desc="预约时间规则提示标题" data-aoi-group="time-select">温馨提示：
+            </h3>
+            <ul class="aoi key-aoi" data-aoi-type="info" data-aoi-desc="预约时间范围及连续时段要求说明" data-aoi-group="time-select">
                 <li><strong>预约时间范围：</strong>您可以预约的时间为今天起至未来一周内的任意一天。请确保您的预约在开放时间内。</li>
                 <li><strong>开放时间：</strong>图书馆开放时间为每天的 <strong>7:30 AM</strong> 至 <strong>10:30 PM</strong>。请在此时间段内进行预约。
                 </li>
@@ -11,10 +12,12 @@
         </div>
         <div class="datetime-picker">
             <div class="date-container">
-                <div class="aoim key-aoi label">预约日期：</div>
+                <div class="aoim key-aoi label" data-aoi-type="info" data-aoi-desc="预约日期选择标签"
+                    data-aoi-group="time-select">预约日期：</div>
                 <div class="date-box">
                     <el-config-provider :locale="locale">
                         <el-date-picker class="aoim key-aoi dp" v-model="selectedDate" type="date" placeholder="选择日期"
+                            data-aoi-type="input" data-aoi-desc="选择具体的预约日期" data-aoi-group="time-select"
                             @change="handleDateChange" :default-value="new Date(1998, 12)" size="large"
                             :disabled-date="disabledDate" :editable="false" :popper-options="{
                                 modifiers: [
@@ -26,20 +29,22 @@
                                         }
                                     }
                                 ]
-                            }" />
+                            }">
+                        </el-date-picker>
                     </el-config-provider>
                 </div>
             </div>
             <div class="time-selects">
-                <div class="time-select">
-                    <div class="aoim key-aoi label">开始时间:</div>
-                    <el-time-select class="aoi key-aoi" v-model="startTime" placeholder="选择开始时间" start="07:30"
-                        end="22:00" step="00:30" :min-time="minTime" @change="handleTimeChange" />
-                </div>
-                <div class="time-select">
-                    <div class="aoim key-aoi label">结束时间:</div>
-                    <el-time-select class="aoi key-aoi" v-model="endTime" placeholder="选择结束时间" start="07:30" end="22:30"
-                        step="00:01" :min-time="startTime" @change="handleTimeChange" />
+                <div class="aoim key-aoi label" data-aoi-type="info" data-aoi-desc="预约时间段选择标签"
+                    data-aoi-group="time-select">预约时间段：</div>
+                <div class="time-box">
+                    <el-time-select class="aoim key-aoi" v-model="startTime" :max-time="endTime" placeholder="起始时间"
+                        data-aoi-type="input" data-aoi-desc="选择预约开始时间" data-aoi-group="time-select" start="07:30"
+                        step="00:30" end="22:30" size="large" @change="handleTimeChange" :min-time="minTime" />
+                    <span class="separator">至</span>
+                    <el-time-select class="aoim key-aoi" v-model="endTime" :min-time="startTime" placeholder="结束时间"
+                        data-aoi-type="input" data-aoi-desc="选择预约结束时间" data-aoi-group="time-select" start="07:30"
+                        step="00:30" end="22:30" size="large" @change="handleTimeChange" />
                 </div>
             </div>
         </div>

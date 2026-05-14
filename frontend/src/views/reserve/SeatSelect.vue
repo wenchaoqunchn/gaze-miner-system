@@ -1,8 +1,8 @@
 <template>
     <div class="seat-layout">
         <div v-for="(seat, index) in seats" :key="index" class="aoi key-aoi seat"
-            :class="{ booked: seat.status === 'booked', selected: seat.status === 'selected' }"
-            @click="selectSeat(index)">
+            :class="{ booked: seat.status === 'booked', selected: seat.status === 'selected' }" data-aoi-type="action"
+            data-aoi-desc="座位选择网格-可点击空闲座位进行预约" data-aoi-group="seat-grid" @click="selectSeat(index)">
             <component :is="getIcon(seat.status)" class="seat-icon" :style="{ color: getIconColor(seat.status) }" />
             <span class="seat-number">{{ index + 1 }}</span>
         </div>

@@ -2,13 +2,16 @@
     <div class="search-container">
         <div class="button-group">
             <button v-for="(item, index) in buttons" :key="index" :class="{ 'active': selectedButton === item }"
-                class="aoim filter-button" @click="selectButton(item)">
+                class="aoim filter-button" @click="selectButton(item)" data-aoi-type="action" data-aoi-desc="检索范围筛选标签切换"
+                data-aoi-group="search-box">
                 {{ item }}
             </button>
         </div>
         <div class="sbox">
-            <input class="aoim sinput"></input>
-            <button class="aoim sbtn">搜索</button>
+            <input class="aoim sinput" data-aoi-type="input" data-aoi-desc="统一文献检索关键词输入框"
+                data-aoi-group="search-box"></input>
+            <button class="aoim sbtn" data-aoi-type="action" data-aoi-desc="执行文献检索操作"
+                data-aoi-group="search-box">搜索</button>
         </div>
     </div>
 </template>

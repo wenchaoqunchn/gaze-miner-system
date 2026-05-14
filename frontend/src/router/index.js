@@ -39,17 +39,10 @@ import TimeSelect from '../views/reserve/TimeSelect.vue';
 import SeatSelect from '../views/reserve/SeatSelect.vue';
 import InfoConfirm from '../views/reserve/InfoConfirm.vue';
 
-import Calibration1Ready from '../views/calibration/Calibration1Ready.vue';
-import Calibration1 from '../views/calibration/Calibration1.vue';
-import Calibration2Ready from '../views/calibration/Calibration2Ready.vue';
-import Calibration2 from '../views/calibration/Calibration2.vue';
-import Calibration3Ready from '../views/calibration/Calibration3Ready.vue';
-import Calibration3 from '../views/calibration/Calibration3.vue';
-
 
 import axios from 'axios';
 import { useStore } from 'vuex';
-import { exportAllAOIInfo } from '../getAOIInfo';
+import { getAOIInfo } from '../getAOIInfo';
 import { ElMessage } from 'element-plus';
 
 const routes = [
@@ -244,7 +237,16 @@ router.beforeEach(async (to, from, next) => {
     // 判断是否需要进行截图
     if (to.name !== 'SessionReady' && from.name !== 'SessionReady') {
         if (store.state.exportAOI) {
-            exportAllAOIInfo(from.name);
+            // 1. 获取当前（即将离开的）页面的全息语义信息
+            const aoiData = getAOIInfo(from.name);
+
+            // 2. 将其保存到 Vuex 的大地图中，而不是直接下载
+            store.commit('UPDATE_GLOBAL_AOI_MAP', {
+                pageName: from.name,
+                data: aoiData
+            });
+
+            console.log(`[Master Mode] 已暂存页面数据: ${from.name}`);
         }
         if (store.state.skipRequest) {
             ElMessage.success('API 请求已被跳过');

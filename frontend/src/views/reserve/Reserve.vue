@@ -3,7 +3,8 @@
         <div class="step-box">
             <div class="step-container">
                 <el-steps class="steps" :active="activeStep" finish-status="success" align-center>
-                    <el-step class="aoi key-aoi" v-for="step in steps" :key="step.title" :title="step.title" />
+                    <el-step class="aoi key-aoi" v-for="step in steps" :key="step.title" :title="step.title"
+                        data-aoi-type="nav" data-aoi-desc="预约流程进度条指示器" data-aoi-group="reserve-steps" />
                 </el-steps>
             </div>
         </div>
@@ -11,10 +12,12 @@
             <router-view />
         </div>
         <div class="button-container">
-            <button class="aoim" @click="prevStep">
+            <button class="aoim" @click="prevStep" data-aoi-type="action" data-aoi-desc="返回上一步或退回主界面"
+                data-aoi-group="reserve-actions">
                 {{ activeStep === 0 ? '返回主界面' : '上一步' }}
             </button>
-            <button class="aoim key-aoi" @click="nextStep">
+            <button class="aoim key-aoi" @click="nextStep" data-aoi-type="action" data-aoi-desc="提交当前选择或进入下一步"
+                data-aoi-group="reserve-actions">
                 {{ activeStep === steps.length - 1 ? '提交' : '下一步' }}
             </button>
         </div>

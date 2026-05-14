@@ -3,11 +3,13 @@
         <el-card class="card" :class="{ 'active': activeCard === 2 }" @click="setActiveCard(2)">
             <div class="section-container">
                 <div class="img-box">
-                    <div class="aoi img f2">
+                    <div class="aoi img f2" data-aoi-type="info" data-aoi-desc="二层社科阅览区图片及楼层简介"
+                        data-aoi-group="floor-select">
                         <div class="layer-text">F2/ 二层 - 社科</div>
                     </div>
                 </div>
-                <div class="aoi section" v-for="(categories, sectionName) in infoF2" :key="sectionName">
+                <div class="aoi section" v-for="(categories, sectionName) in infoF2" :key="sectionName"
+                    data-aoi-type="info" data-aoi-desc="二层具体藏书分类说明" data-aoi-group="floor-select">
                     <h3>{{ sectionName }}</h3>
                     <ul>
                         <li v-for="(description, code) in categories" :key="code">
@@ -21,11 +23,13 @@
         <el-card class="card" :class="{ 'active': activeCard === 3 }" @click="setActiveCard(3)">
             <div class="section-container">
                 <div class="img-box">
-                    <div class="aoi key-aoi img f3">
+                    <div class="aoi key-aoi img f3" data-aoi-type="info" data-aoi-desc="三层科技阅览区图片及楼层简介"
+                        data-aoi-group="floor-select">
                         <div class="layer-text">F3/ 三层 - 科技</div>
                     </div>
                 </div>
-                <div class="aoi key-aoi section" v-for="(categories, sectionName) in infoF3" :key="sectionName">
+                <div class="aoi key-aoi section" v-for="(categories, sectionName) in infoF3" :key="sectionName"
+                    data-aoi-type="info" data-aoi-desc="三层具体藏书分类说明" data-aoi-group="floor-select">
                     <h3>{{ sectionName }}</h3>
                     <ul>
                         <li style="font-family: 'MingLiU'" v-for="(description, code) in categories" :key="code">
@@ -39,14 +43,16 @@
         <el-card class="card" :class="{ 'active': activeCard === 4 }" @click="setActiveCard(4)">
             <div class="section-container">
                 <div class="img-box">
-                    <div class="aoi img f4">
-                        <div class="layer-text">F4/ 四层 - 文学</div>
+                    <div class="aoi key-aoi img f4" data-aoi-type="info" data-aoi-desc="四层过刊阅览区图片及楼层简介"
+                        data-aoi-group="floor-select">
+                        <div class="layer-text">F4/ 四层 - 过刊</div>
                     </div>
                 </div>
-                <div class="aoi section" v-for="(categories, sectionName) in infoF4" :key="sectionName">
+                <div class="aoi key-aoi section" v-for="(categories, sectionName) in infoF4" :key="sectionName"
+                    data-aoi-type="info" data-aoi-desc="四层具体藏书分类说明" data-aoi-group="floor-select">
                     <h3>{{ sectionName }}</h3>
                     <ul>
-                        <li style="font-family: 'MingLiU'" v-for="(description, code) in categories" :key="code">
+                        <li v-for="(description, code) in categories" :key="code">
                             {{ code }}: {{ description }}
                         </li>
                     </ul>

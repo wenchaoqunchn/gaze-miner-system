@@ -4,7 +4,9 @@
     </div>
     <div class="main-box">
         <div class="poster">
-            <h1 class="aoi">本馆风貌</h1>
+            <h1 class="aoi" data-aoi-type="info" data-aoi-desc="本馆风貌图片轮播展示区标题" data-aoi-group="homepage-poster">
+                本馆风貌
+            </h1>
             <PosterPlayer />
         </div>
         <div class="wrapper">
@@ -13,7 +15,7 @@
             </div>
         </div>
     </div>
-    <div class="aoi footer">
+    <div class="aoi footer" data-aoi-type="nav" data-aoi-desc="全局底部信息：包含其他馆际链接与版权投诉邮箱" data-aoi-group="global-footer">
         <div>国内外图书馆 | 国家图书馆 | 首都图书馆 | 中科院文献情报中心 | CALIS | BALIS培训中心 | 国家科技图书文献中心</div>
         <div>版权所有 ©2019　 北京工业大学图书馆 | 馆长信箱：lib@bjut.edu.cn</div>
     </div>

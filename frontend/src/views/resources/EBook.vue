@@ -1,12 +1,12 @@
 <template>
     <div class="main-content">
-        <div class="aoi breadcrumb">
+        <div class="aoi breadcrumb" data-aoi-type="info" data-aoi-desc="面包屑位置提示" data-aoi-group="e-book">
             您当前所在位置 ： 首页 > 资源 > 电子图书
         </div>
-        <div class="aoi title">
+        <div class="aoi title" data-aoi-type="info" data-aoi-desc="页面主标题-电子图书" data-aoi-group="e-book">
             <h2>电子图书</h2>
         </div>
-        <div class="aoi content">
+        <div class="aoi content" data-aoi-type="info" data-aoi-desc="已购中外文电子图书资源列表与馆际互借说明" data-aoi-group="e-book">
             <h3>一. 已购中外文电子图书</h3>
             <table>
                 <thead>

@@ -1,12 +1,13 @@
 <template>
     <div class="main-content">
-        <div class="aoi breadcrumb">
+        <div class="aoi breadcrumb" data-aoi-type="info" data-aoi-desc="面包屑位置提示" data-aoi-group="service-time">
             您当前所在位置 ： 首页 > 图书馆概况 > 服务时间
         </div>
-        <div class="aoi title">
+        <div class="aoi title" data-aoi-type="info" data-aoi-desc="页面主标题-服务时间" data-aoi-group="service-time">
             <h2>服务时间</h2>
         </div>
-        <div class="aoi content">
+        <div class="aoi content" data-aoi-type="info" data-aoi-desc="服务时间表格：详细列出各阅览区、书库的开放和闭馆时间"
+            data-aoi-group="service-time">
             <table class="service-table">
                 <thead>
                     <tr>

@@ -1,12 +1,13 @@
 <template>
     <div class="main-content">
-        <div class="aoi breadcrumb">
+        <div class="aoi breadcrumb" data-aoi-type="info" data-aoi-desc="面包屑位置提示" data-aoi-group="common-app">
             您当前所在位置 ： 首页 > 资源 > 常用工具软件
         </div>
-        <div class="aoi title">
+        <div class="aoi title" data-aoi-type="info" data-aoi-desc="页面主标题-常用工具软件" data-aoi-group="common-app">
             <h2>常用工具软件</h2>
         </div>
-        <div class="aoi content">
+        <div class="aoi content" data-aoi-type="info" data-aoi-desc="常用文献管理、阅读器(如EndNote, CAJ)及正版软件列表说明"
+            data-aoi-group="common-app">
             <table>
                 <thead>
                     <tr>

@@ -1,6 +1,6 @@
 <template>
-    <div class="aoi poster-container">
-        <img :src="singleImage" alt="图书馆外景" class="poster-image" />
+    <div class="aoi poster-container" data-aoi-type="info" data-aoi-desc="图书馆实景风貌轮播海报区" data-aoi-group="poster-player">
+        <img :src="singleImage" alt="图书馆实景" class="poster-image" />
     </div>
 </template>
 

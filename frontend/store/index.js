@@ -136,7 +136,8 @@ const store = createStore({
             },
             skipRequest: true,    // 开发设置
             noIssue: false,        // 开发设置
-            exportAOI: false
+            exportAOI: false,    // 你已有的控制变量
+            globalAOIMap: {},    // 【新增】全站 AOI 数据大地图
         };
     },
     mutations: {
@@ -167,6 +168,10 @@ const store = createStore({
         toggleExportAOI(state, value) { // 新增的 mutation
             state.exportAOI = value; // 直接设置为传入的值
         },
+        UPDATE_GLOBAL_AOI_MAP(state, { pageName, data }) {
+            // 以页面名为 Key，保存该页面的 AOI 数组
+            state.globalAOIMap[pageName] = data;
+        }
     },
     actions: {
         updateSelectedFloor({ commit }, floor) {

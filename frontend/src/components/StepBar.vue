@@ -1,6 +1,9 @@
 <template>
-    <el-steps :active="activeStep" finish-status="success">
-        <el-step v-for="step in steps" :key="step.title" :title="step.title" :description="step.description" />
+    <el-steps class="aoi" :active="activeStep" finish-status="success" data-aoi-type="info"
+        data-aoi-desc="通用流程步骤指示器整体区域" data-aoi-group="step-bar">
+        <el-step class="aoim key-aoi" v-for="step in steps" :key="step.title" :title="step.title"
+            :description="step.description" data-aoi-type="info" data-aoi-desc="具体流程步骤节点状态展示"
+            data-aoi-group="step-bar" />
     </el-steps>
 </template>
 

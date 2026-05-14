@@ -1,19 +1,22 @@
 <template>
-    <img src="../assets/logo.png" alt="Logo" class="aoi logo" />
-    <el-tabs v-model="activeTab" :tab-bar-style="{ transition: 'none' }" class="aoi nav" @tab-click="handleTabClick">
-        <el-tab-pane  label="首页" name="HomePage"></el-tab-pane>
-        <el-tab-pane  label="图书馆概况" name="Overview"></el-tab-pane>
-        <el-tab-pane  label="资源" name="Resources"></el-tab-pane>
+    <img src="../assets/logo.png" alt="Logo" class="aoi logo" data-aoi-type="nav" data-aoi-desc="系统Logo，点击通常可返回首页"
+        data-aoi-group="main-header" />
+
+    <el-tabs v-model="activeTab" :tab-bar-style="{ transition: 'none' }" class="aoi nav" @tab-click="handleTabClick"
+        data-aoi-type="nav" data-aoi-desc="顶部主导航栏，包含首页、概况、资源、服务等核心入口" data-aoi-group="main-header">
+        <el-tab-pane label="首页" name="HomePage"></el-tab-pane>
+        <el-tab-pane label="图书馆概况" name="Overview"></el-tab-pane>
+        <el-tab-pane label="资源" name="Resources"></el-tab-pane>
         <el-tab-pane label="服务" name="Services"></el-tab-pane>
         <el-tab-pane label="联系我们" name="ContactUs"></el-tab-pane>
     </el-tabs>
-    <div class="time aoi">
+
+    <div class="time aoi" data-aoi-type="info" data-aoi-desc="展示今日开馆时间与状态" data-aoi-group="main-header">
         <img src="../assets/clock.gif" alt="Clock" class="gif" />
         <div>今日开馆时间</div>
         <div>{{ openingHours }}</div>
     </div>
 </template>
-
 <script setup>
 import { ref, watch } from 'vue';
 import { useRouter, useRoute } from 'vue-router';

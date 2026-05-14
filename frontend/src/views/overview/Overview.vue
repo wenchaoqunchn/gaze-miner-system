@@ -2,16 +2,24 @@
     <div class="main-box">
         <div class="sidebar">
             <div class="bar-title">
-                <h2 class="aoi">图书馆概况</h2>
+                <h2 class="aoi" data-aoi-type="info" data-aoi-desc="侧边栏主标题-图书馆概况" data-aoi-group="overview-sidebar">
+                    图书馆概况
+                </h2>
             </div>
             <el-menu :default-active="activeMenu" class="el-menu-vertical" @select="handleSelect"
                 background-color="#f7f7f7" text-color="#333" active-text-color="#20a0ff" mode="vertical">
-                <el-menu-item class="aoip" index="LibIntro">本馆介绍</el-menu-item>
-                <el-menu-item class="aoip" index="LeaderSpeech">馆长致辞</el-menu-item>
-                <el-menu-item class="aoip" index="LibRule">规章制度</el-menu-item>
-                <el-menu-item class="aoip" index="ServiceTime">服务时间</el-menu-item>
-                <el-menu-item class="aoip" index="ServiceOverview">服务一览</el-menu-item>
-                <el-menu-item class="aoip" index="LibLayout">图书馆布局</el-menu-item>
+                <el-menu-item class="aoip" index="LibIntro" data-aoi-type="nav" data-aoi-desc="导航至本馆介绍页"
+                    data-aoi-group="overview-menu">本馆介绍</el-menu-item>
+                <el-menu-item class="aoip" index="LeaderSpeech" data-aoi-type="nav" data-aoi-desc="导航至馆长致辞页"
+                    data-aoi-group="overview-menu">馆长致辞</el-menu-item>
+                <el-menu-item class="aoip" index="LibRule" data-aoi-type="nav" data-aoi-desc="导航至规章制度页"
+                    data-aoi-group="overview-menu">规章制度</el-menu-item>
+                <el-menu-item class="aoip" index="ServiceTime" data-aoi-type="nav" data-aoi-desc="导航至服务时间页"
+                    data-aoi-group="overview-menu">服务时间</el-menu-item>
+                <el-menu-item class="aoip" index="ServiceOverview" data-aoi-type="nav" data-aoi-desc="导航至服务一览页"
+                    data-aoi-group="overview-menu">服务一览</el-menu-item>
+                <el-menu-item class="aoip" index="LibLayout" data-aoi-type="nav" data-aoi-desc="导航至图书馆布局页"
+                    data-aoi-group="overview-menu">图书馆布局</el-menu-item>
             </el-menu>
         </div>
         <div class="main-content">
